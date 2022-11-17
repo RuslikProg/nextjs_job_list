@@ -1,0 +1,1 @@
+export const convertData = (data, arg) => data?.split(arg).map(x=>x.trim()).filter(Boolean);

@@ -28,7 +28,7 @@ a {
     font-size: 16px;
     font-weight: 400;
     line-height: 1.33;
-    background-color: #747d85;
+    background-color: white;
     color: #3a4562;
   }
 }
@@ -45,4 +45,12 @@ p{
 
 img{
   max-width: none;
+}
+
+.sectionTitle {
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.21;
+  letter-spacing: .413333px;
+  color: rgb(58 69 98);
 }

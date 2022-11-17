@@ -2,14 +2,7 @@
 const nextConfig = {
   reactStrictMode: false,
   images: {
-    remotePatterns: [
-      {
-        protocol: 'https',
-        hostname: '//picsum.photos/200/300',
-        port: '',
-        pathname: '/200/300',
-      },
-    ],
+    unoptimized: true,
   },
 }
 
