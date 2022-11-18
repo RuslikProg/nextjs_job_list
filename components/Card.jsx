@@ -35,18 +35,18 @@ const Card = ({data,link}) => {
                   <BsStarFill/>
                 </div>
                 <p className="font-light text=[14px] text-textGray">
-                  Posted 2 days ago
+                  Posted {postDate}
                 </p>
               </div>
               <Link href={`/cards/${data?.id}`}>
-                <h2 className='font-medium tracking-[-0.560px] text-[18px] lg:text-[20px] pt-4 lg:pt-0 pb-1 lg:pb-2'>
+                <h2 className='font-medium lg:font-bold text-[18px] lg:text-[20px] pt-4 lg:pt-0 pb-1 lg:pb-2'>
                   {data?.title}
                 </h2>
               </Link>
               <p className='text-base font-normal mb-1'>
                 Department name • {data?.name} 
               </p>
-              <p className='text-base font-normal flex row-auto items-center gap-x-1'>
+              <p className='flex text-base font-normal row-auto items-center gap-x-1'>
                 <BsGeoAlt/> {data?.address} 
               </p>
             </div>
