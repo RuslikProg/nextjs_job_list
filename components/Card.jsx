@@ -1,13 +1,13 @@
 import { BsBookmark, BsStarFill, BsGeoAlt } from "react-icons/bs";
 import Image from 'next/image';
 import Link from 'next/link';
-
+import {starsGerenerator, dateMaker} from '../utils/index';
 
 const Card = ({data,link}) => {
-  let postDate = data?.updatedAt.substring(0,10).replace(/-/g,'/')
-
+  const postDate = dateMaker(data);
   const src = link[1];
-
+  const stars = starsGerenerator(5)
+  
   return (
     <div className='mb-2'>
       <div className='border px-4 pt-3 pb-7 lg:py-6 rounded-lg bg-jobCard_bg_color_mob bg-white cardShadow'>
@@ -23,16 +23,12 @@ const Card = ({data,link}) => {
                 className='w-[66px] h-[66px] lg:w-[85px] lg:h-[85px] rounded-full mr-5 mt-10 lg:mt-0 lg:mr-[26px]'
               />
               </div>
-
             <div className='w-full'>
-              {/* hidden div */}
               <div className="flex justify-between font-light text-sm lg:hidden">
                 <div className='flex items-center text-gray-400 pr-8'>
-                  <BsStarFill/>
-                  <BsStarFill/>
-                  <BsStarFill/>
-                  <BsStarFill/>
-                  <BsStarFill/>
+                  {
+                    stars.map((item,index)=> <BsStarFill key={`${index}_star1`}/>)
+                  }
                 </div>
                 <p className="font-light text=[14px] text-textGray">
                   Posted {postDate}
@@ -53,11 +49,9 @@ const Card = ({data,link}) => {
           </div>
           <div className="hidden lg:flex shrink-0">
             <div className='flex items-center text-gray-400 pr-8'>
-              <BsStarFill/>
-              <BsStarFill/>
-              <BsStarFill/>
-              <BsStarFill/>
-              <BsStarFill/>
+            {
+              stars.map((item,index)=> <BsStarFill key={`${index}_star2`}/>)
+            }
             </div>
             <div className='flex flex-col justify-between items-end'>
                 <p className='hover:text-sky-900 hidden md:block lx:block 2xl:block '>

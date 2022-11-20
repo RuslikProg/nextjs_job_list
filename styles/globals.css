@@ -2,24 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
-
-
-
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: 'proxima_nova_rgregular';
+  font-family:'proxima_nova_rgregular';
 	src: url('https://litmus.com/fonts/Emails/proximanova-regular-webfont.eot');
 	src: url('https://litmus.com/fonts/Emails/proximanova-regular-webfont.eot?#iefix') format('embedded-opentype'),
 		 url('https://litmus.com/fonts/Emails/proximanova-regular-webfont.woff') format('woff'),
 		 url('https://litmus.com/fonts/Emails/proximanova-regular-webfont.ttf') format('truetype'),
 		 url('https://litmus.com/fonts/Emails/proximanova-regular-webfont.svg#proxima_nova_rgregular') format('svg');
-
 }
 
 @font-face {
-	font-family: 'proxima_nova_rgregular';
+	font-family:'proxima_nova_rgregular';
 	src: url('https://litmus.com/fonts/Emails/proximanova-regular-webfont.eot');
 	src: url('https://litmus.com/fonts/Emails/proximanova-regular-webfont.eot?#iefix') format('embedded-opentype'),
 		 url('https://litmus.com/fonts/Emails/proximanova-regular-webfont.woff') format('woff'),
@@ -37,21 +33,6 @@ a {
 * {
   box-sizing: border-box;
 }
-
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-  body {
-    box-sizing: border-box;
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 1.33;
-    background-color: #F5F5F5 ;
-    color: #3a4562;
-  }
-}
-
 
 h4{
   color: #3A4562;

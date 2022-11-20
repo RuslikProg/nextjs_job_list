@@ -1,21 +1,15 @@
 import { BsBookmark, BsShareFill, BsGeoAltFill, BsStar } from "react-icons/bs";
 import Map from '../../components/Map';
-import {convertData} from '../../utils/index';
+import {convertData, dateMaker} from '../../utils/index';
 import Image from 'next/image';
-import { useRouter } from 'next/router'
+import { useRouter } from 'next/router';
 
-const AnyReactComponent = ({ text }) => (
 
-  <div className="text-[#d1223f] text-3xl">
-    <BsGeoAltFill/>
-  </div>
-);
 const CardDetails = ({card}) => {
+  const postDate = dateMaker(card);
   const router = useRouter();
-  let postDate = card?.updatedAt.substring(0,10).replace(/-/g,'/')
-
-  const info = convertData(card.description, '\n')
-  const benefitsList = convertData(info[4], '.')
+  const info = convertData(card.description, '\n');
+  const benefitsList = convertData(info[4], '.');
 
   const defaultProps = {
     center: {
@@ -91,13 +85,13 @@ const CardDetails = ({card}) => {
             <p className="text-[18px] tracking-[-0.5625px] pb-4">Employment type</p>
             <div className="flex gap-2 pb-6">
               <div className="flex gap-4 flex-row">
-                {card.employment_type.map(e=><div className="w-[122px] h-[52px] bg-[#e8e8f7] border border-[#718ace4b] flex items-center justify-center text-[#718ace] rounded-lg uppercase text-[14px] font-bold" key={e}>{e}</div>)}
+                {card.employment_type.map(e=><div className="w-[122px] h-[52px] bg-[#e8e8f7] border border-[#718ace4b] flex items-center justify-center text-[#718ace] rounded-lg text-[14px] font-bold" key={e}>{e}</div>)}
               </div>
             </div>
             <p className="text-[18px] tracking-[-0.5625px] pb-4">Benefits</p>
             <div className="flex gap-2 pb-6">
               <div className="flex gap-4 flex-row pb-16">
-                {card.benefits.map(e=><div className="h-[52px] w-[170px] md:w-[222px] bg-[#fff8d9] border border-yellow-300 flex flex-row items-center justify-center text-[#867d49] rounded-lg font-bold uppercase text-[14px] " key={e}>{e}</div>)}
+                {card.benefits.map(e=><div className="h-[52px] w-[170px] md:w-[222px] bg-[#fff8d9] border border-yellow-300 flex flex-row items-center justify-center text-[#867d49] rounded-lg font-bold text-[14px] " key={e}>{e}</div>)}
               </div>
             </div>
           </div>
@@ -133,12 +127,9 @@ const CardDetails = ({card}) => {
               <Map
                 center={defaultProps.center}
                 zoom={defaultProps.zoom}
-              >
-                <AnyReactComponent
-                  lat={+card.location.lat} 
-                  lng={+card.location.long} 
-                />
-              </Map>
+                lat={defaultProps.center.lat}
+                long={defaultProps.center.lng}
+              />
             </div>
           </div>
         </div>
