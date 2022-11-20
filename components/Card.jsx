@@ -10,7 +10,7 @@ const Card = ({data,link}) => {
   
   return (
     <div className='mb-2'>
-      <div className='border px-4 pt-3 pb-7 lg:py-6 rounded-lg bg-jobCard_bg_color_mob bg-white cardShadow'>
+      <div className='border px-4 pt-3 pb-7 lg:py-6 rounded-lg bg-[#EFF0F5] lg:bg-white shadow-md'>
         <div className="lg:flex lg:justify-between">
           <div className="flex">
               <div>
@@ -35,7 +35,7 @@ const Card = ({data,link}) => {
                 </p>
               </div>
               <Link href={`/cards/${data?.id}`}>
-                <h2 className='font-medium lg:font-bold text-[18px] lg:text-[20px] pt-4 lg:pt-0 pb-1 lg:pb-2'>
+                <h2 className='font-medium text-[#3A4562] lg:font-bold text-[18px] lg:text-[20px] pt-4 lg:pt-0 pb-1 lg:pb-2'>
                   {data?.title}
                 </h2>
               </Link>

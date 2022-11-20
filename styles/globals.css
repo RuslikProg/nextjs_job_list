@@ -4,6 +4,7 @@
 
 html,
 body {
+  background-color: #e6e9f2;
   padding: 0;
   margin: 0;
   font-family:'proxima_nova_rgregular';
@@ -53,7 +54,7 @@ img{
   font-weight: 700;
   line-height: 1.21;
   letter-spacing: .413333px;
-  color: rgb(58 69 98);
+  color: #3A4562;
 }
 
 li {
