@@ -104,7 +104,7 @@ const CardDetails = ({card}) => {
             </div>
           </div>
           {/* ___________________________________________Attached images___________________________________ */}
-          <button onClick={()=>router.back()} className="w-[213px] h-[50px] bg-[#e8e8f7] border rounded-lg text-[#3A4562] text-[12px] font-semibold flex items-center justify-center">RETURN TO JOB BOARD</button>
+          <button onClick={()=>router.back()} className="w-[213px] h-[50px] bg-[#e8e8f7] border rounded-lg text-[#3A4562] text-[12px] font-semibold hidden lg:flex items-center justify-center ">RETURN TO JOB BOARD</button>
         </div>
         {/* map section */}
         <div>
