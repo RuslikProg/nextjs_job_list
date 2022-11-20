@@ -3,7 +3,7 @@ import Map from '../../components/Map';
 import {convertData, dateMaker} from '../../utils/index';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
-
+import apiURL from "../../constants";
 
 const CardDetails = ({card}) => {
   const postDate = dateMaker(card);
@@ -27,7 +27,7 @@ const CardDetails = ({card}) => {
             <div className="border-b-2 border-[#3a45621c]  lg:border-none">
               <h1 className="sectionTitle pb-3 lg:pb-0">Job Details</h1>
             </div>
-            <div className="pt-6 pb-8 lg:p-0 leading-[1.44] text-darkGray flex lg:text-[18px] lg:leading-[1.33] tracking-[-0.5px]">
+            <div className="pt-6 pb-8 lg:p-0 leading-[1.44] text-darkGray flex lg:text-[18px] lg:leading-[1.33]">
               <div className="pr-4 flex gap-x-2 items-center">
                 <BsBookmark
                   className="hidden lg:inline"
@@ -142,7 +142,7 @@ const CardDetails = ({card}) => {
 export default CardDetails;
 
 export async function getServerSideProps({params}) {
-  const res = await fetch(`https://api.json-generator.com/templates/ZM1r0eic3XEy/data?access_token=wm3gg940gy0xek1ld98uaizhz83c6rh2sir9f9fu`)
+  const res = await fetch(apiURL)
   const cards = await res.json()
   const card = cards.find(item=>item.id === params.id)
   return {
